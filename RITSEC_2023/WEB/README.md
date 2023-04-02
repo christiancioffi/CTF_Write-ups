@@ -36,7 +36,7 @@ When a button is clicked, a cookie called "*order*" is set to a pickled string, 
 
 ![Unpickling](https://user-images.githubusercontent.com/66698256/229381958-d871524b-304f-4e3b-932b-790bd8eba284.png)
 
-The final string is the same string visualized in the <code>/order</code> page.<br>
+The final string is the same visualized in the <code>/order</code> page.<br>
 Another example:
 
 ![Pickling](https://user-images.githubusercontent.com/66698256/229382473-c062a8e3-a07e-4b39-8ee6-72cf397041aa.png)
