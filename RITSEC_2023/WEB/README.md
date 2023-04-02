@@ -48,7 +48,7 @@ The user can create any pickled object and set the "*order*" cookie accordingly.
 
 ## Attack
 
-The fact that a pickled string can be printed in the <code>/order</code> page is of no interest to the attacker.
+The behaviour to be exploited is the unsecure unpickling (or insecure deserialization) of particular pickled objects. What the application does with the output of the deserialization is of no interest to the attacker.
 
 ## References
 <a id="1">[1]</a> 
