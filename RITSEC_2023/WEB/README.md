@@ -32,7 +32,7 @@ Clicking on the "New Order" button the user will be redirected to the initial pa
 
 ![Cookie setting](https://user-images.githubusercontent.com/66698256/229377514-b38166dd-aa58-412f-866b-9b865f722abc.png)
 
-When a button is clicked, a cookie called "*order*" is set to a pickled string, sent to the server through a GET request to <code>/order</code>, its value decoded, unpickled and then printed into the returned page. If we take the cookie value defined in the event handler of the "Sweet Pickle" button, decode it and unpickle it, we'll get the following outputs:
+When a button is clicked, a cookie called "*order*" is set to a pickled string, sent to the server through a GET request to <code>/order</code>, its value decoded, unpickled and then printed into the returned page. For example, if we take the cookie value defined in the event handler of the "Sweet Pickle" button, decode it and unpickle it, we'll get the following outputs:
 
 ![Unpickling](https://user-images.githubusercontent.com/66698256/229381958-d871524b-304f-4e3b-932b-790bd8eba284.png)
 
