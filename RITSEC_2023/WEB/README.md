@@ -45,7 +45,7 @@ Another example:
 
 ![AAAA](https://user-images.githubusercontent.com/66698256/229378762-be51dd0c-33b0-40c2-abcf-c1b41e340fde.png)
 
-The fact that the pickled string is ultimately printed on the returned page is of no interest to the user.
+The fact that the pickled string is ultimately printed on the returned page is of no interest to the attacker.
 
 ## Attack
 
