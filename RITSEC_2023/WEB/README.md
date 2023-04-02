@@ -32,15 +32,16 @@ By inspecting the buttons in the initial page something interesting can be seen:
 
 ![Cookie setting](https://user-images.githubusercontent.com/66698256/229377514-b38166dd-aa58-412f-866b-9b865f722abc.png)
 
-Every time a button is clicked a cookie called "*order*" is set. The string on which the cookie is being set is the base64 encoding of a pickled object. If we take the cookie value in the event handler of the "Sweet Pickle" button, decode it and unpickle it, we'll get the following outputs:
+When a button is clicked, a cookie called "*order*" is set to a pickled string, sent to the server through a GET request to <code>/order</code>, its value unpickled and then printed into the returned page. If we take the cookie value defined in the event handler of the "Sweet Pickle" button, decode it and unpickle it, we'll get the following outputs:
 
 ![Unpickling](https://user-images.githubusercontent.com/66698256/229381958-d871524b-304f-4e3b-932b-790bd8eba284.png)
 
-When a button is clicked, a pickled string is written into the cookie "*order*", sent to the server through a GET request to <code>/order</code>, unpickled and the value of the initial string printed into the returned page. An example:
+The final string is the same string visualized in the <code>/order</code> page.<br>
+Another example:
 
-![Pickling](https://user-images.githubusercontent.com/66698256/229378739-e7ef709d-ddd0-4338-83e7-0fce13171466.png)
+![Pickling](https://user-images.githubusercontent.com/66698256/229382473-c062a8e3-a07e-4b39-8ee6-72cf397041aa.png)
 
-![Set forged cookie](https://user-images.githubusercontent.com/66698256/229378757-81dd3bd9-0af6-4b91-8ce3-bebc4fa18b04.png)
+![Set forged cookie](https://user-images.githubusercontent.com/66698256/229382220-2c6b25ef-d00e-4681-8267-fa8c751e4892.png)
 
 ![AAAA](https://user-images.githubusercontent.com/66698256/229378762-be51dd0c-33b0-40c2-abcf-c1b41e340fde.png)
 
