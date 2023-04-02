@@ -1,3 +1,3 @@
-# RITSEC CTF 2023 - WEB - Pickle Store
+# Pickle Store
 
 AAAA
