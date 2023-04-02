@@ -36,7 +36,7 @@ When a button is clicked, a cookie called "*order*" is set to a pickled string, 
 
 ![Unpickling](https://user-images.githubusercontent.com/66698256/229381958-d871524b-304f-4e3b-932b-790bd8eba284.png)
 
-The final string is the same visualized in the <code>/order</code> page.<br>
+The string "*sweetpickle*" is the same visualized in the <code>/order</code> page.<br>
 The user can create any pickled object and set the "*order*" cookie accordingly. This object, if a string, will be printed on the <code>/order</code> page.
 
 ![Pickling](https://user-images.githubusercontent.com/66698256/229382473-c062a8e3-a07e-4b39-8ee6-72cf397041aa.png)
