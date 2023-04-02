@@ -24,7 +24,7 @@ This is the first thing the user see as soon as he/she accesses the challenge:
 
 ![Pickle Store](https://user-images.githubusercontent.com/66698256/229376712-d235bbbb-0d59-4c3d-a9e0-ab0829107127.png)
 
-If the user clicks on one of the buttons (the first, for example), he/she will be redirected to <code>/order</code>:
+If the user clicks on one of the buttons (the first one, for example), he/she will be redirected to <code>/order</code>:
 
 ![Order executed](https://user-images.githubusercontent.com/66698256/229377403-7b7e14fd-62dd-46fd-9b15-5188b734f11d.png)
 
