@@ -20,7 +20,7 @@ class RCE:
         return (function_name, (parameter_1,parameter_2,)) #if there is only 1 parameter: (parameter_1,)
 ```
 ## Exploring the challenge
-This is the first thing the user see as soon he/she accesses the challenge:
+This is the first thing the user see as soon as he/she accesses the challenge:
 
 ![Pickle Store](https://user-images.githubusercontent.com/66698256/229376712-d235bbbb-0d59-4c3d-a9e0-ab0829107127.png)
 
