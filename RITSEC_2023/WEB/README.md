@@ -32,7 +32,7 @@ By inspecting the buttons in the initial page something interesting can be seen:
 
 ![Cookie setting](https://user-images.githubusercontent.com/66698256/229377514-b38166dd-aa58-412f-866b-9b865f722abc.png)
 
-Every time a button is clicked a cookie named "*order*" is set. The string on which the cookie is being set is the base64 encoding of a pickled object. If we take the cookie value in the "Sweet Pickle" button, decode it and unpickling it, we'll get the following outputs:
+Every time a button is clicked a cookie named "*order*" is set. The string on which the cookie is being set is the base64 encoding of a pickled object. If we take the cookie value in the event handler of the "Sweet Pickle" button, decode it and unpickle it, we'll get the following outputs:
 
 ![Unpickling](https://user-images.githubusercontent.com/66698256/229378264-986ebdd8-36e7-48e5-9ea7-b6e36450c1db.png)
 
