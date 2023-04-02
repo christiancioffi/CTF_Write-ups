@@ -48,7 +48,7 @@ The user can create any pickled object and set the "*order*" cookie accordingly.
 
 ## Attack
 
-The behaviour to be exploited is the unsecure unpickling (or insecure deserialization) of particular pickled objects. What the application does with the output of the deserialization is of no interest to the attacker. A way to exploit the involved vulnerability is to spawn on the server a reverse shell.
+The behaviour to be exploited is the unsecure unpickling (or insecure deserialization) of particular pickled objects. What the application does with the output of the deserialization is of no interest to the attacker. A way to exploit the involved vulnerability is to spawn a reverse shell on the server.
 
 ## References
 <a id="1">[1]</a> 
