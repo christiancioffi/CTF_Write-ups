@@ -6,7 +6,7 @@
 
 ## Involved Vulnerability
 
-The server of this challenge uses the Python module named *pickle*, which is used for serializing (“*Pickling*”) and de-serializing (“*Unpickling*”) Python objects' structure (see [[1]](#1)). This module is vulnerable to RCE during unpickling of class instances (objects). Classes can be definied in order to contain methods that allow to alter the default behaviour of unpickling process. One of these methods is *\_\_reduce()\_\_*.<br>
+The server of this challenge uses the Python module named *pickle*, which is used for serializing (“*Pickling*”) and de-serializing (“*Unpickling*”) Python objects' structure (see [[1]](#1)). This module is vulnerable to RCE during unpickling of class instances (objects). Classes can be defined to contain methods that can be called during unpickling process. One of these methods is *\_\_reduce()\_\_*.<br>
 As evidenced by [[1]](#1):<br>
 
 >The \_\_reduce\_\_() method takes no argument and shall return either a string or preferably a tuple (the returned object is often referred to as the “reduce value”).<br>
@@ -46,7 +46,7 @@ When a button is clicked, a pickled string is written into the cookie "*order*",
 
 The fact that the pickled string is ultimately printed on the returned page is of no interest to the user.
 
-## Exploit
+## Attack
 
 
 ## References
