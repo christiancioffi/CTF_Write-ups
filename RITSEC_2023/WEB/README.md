@@ -28,7 +28,7 @@ If the user clicks on one of the buttons, he/she will be redirected to <code>/or
 
 ![Order executed](https://user-images.githubusercontent.com/66698256/229377403-7b7e14fd-62dd-46fd-9b15-5188b734f11d.png)
 
-Clicking on the "New Order" button the user will be sent to the initial page. By inspecting the four buttons something interesting can be noticed:
+Clicking on the "New Order" button the user will be redirected to the initial page. By inspecting the four buttons something interesting can be noticed:
 
 ![Cookie setting](https://user-images.githubusercontent.com/66698256/229377514-b38166dd-aa58-412f-866b-9b865f722abc.png)
 
