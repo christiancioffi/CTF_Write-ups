@@ -6,7 +6,7 @@
 
 ## Involved Vulnerability
 
-This challenge is about a simple XXE Injection.
+This challenge is about XXE Injection.
 
 ## Exploring the challenge
 This is the first thing we see as soon as we access the challenge:
