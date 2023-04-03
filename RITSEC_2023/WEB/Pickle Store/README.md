@@ -43,8 +43,9 @@ Thus we can pickle any object (not only strings), encode it in base64 and set th
 
 ![Set forged cookie](https://user-images.githubusercontent.com/66698256/229382220-2c6b25ef-d00e-4681-8267-fa8c751e4892.png)
 
-![AAAA](https://user-images.githubusercontent.com/66698256/229378762-be51dd0c-33b0-40c2-abcf-c1b41e340fde.png)
+By reloading <code>/order</code> page the string "<code>AAAA</code>" will be printed out:
 
+![AAAA](https://user-images.githubusercontent.com/66698256/229378762-be51dd0c-33b0-40c2-abcf-c1b41e340fde.png)
 
 ## Attack
 
