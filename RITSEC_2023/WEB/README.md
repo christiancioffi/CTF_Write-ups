@@ -81,13 +81,13 @@ pickled_base64_string = pickled_base64_bytes.decode('ascii')   #Bsse64 encoding 
 response=requests.get("https://pickles-web.challenges.ctf.ritsec.club/order",cookies={"order":pickled_base64_string})
 print(response.text)
 ```
-In order to execute a reverse shell a service like <code>ngrok</code> can be used. In this example I will listen on port 9001 of my own machine, but, for the server, I will listen on port <code>19945</code> at <code>4.tcp.eu.ngrok.io</code> (IP address of this name can be obtained with socket.gethostbyname() function). ngrok will redirect traffic on its port to mine. So:
+In order to execute a reverse shell a service like <code>ngrok</code> can be used. In this example I will listen on port 9001 of my own machine, but, for the server, I will listen on port <code>19945</code> at <code>4.tcp.eu.ngrok.io</code> (IP address of this name can be obtained with <code>socket.gethostbyname()</code> function). ngrok will redirect traffic on its port to mine. So:
 
-![Listening_Reverse_Shell](https://user-images.githubusercontent.com/66698256/229456489-9d923751-d86a-4baf-858a-53d33d6c6ef0.png)
+![Listening_Reverse_Shell](https://user-images.githubusercontent.com/66698256/229460262-ab932d54-cd3b-4129-8e6a-0414c33c22e6.png)
 
 Then i'll execute the exploit:
 
-![Exploit](https://user-images.githubusercontent.com/66698256/229456560-0757c3d6-a662-4449-b966-96bee371f049.png)
+![Exploit](https://user-images.githubusercontent.com/66698256/229460307-60e25c2c-305a-493c-a2e4-e2c2553d8721.png)
 
 ![Spawned_Reverse_Shell](https://user-images.githubusercontent.com/66698256/229456613-76d66a6c-1468-4e23-8626-c1c79855f29c.png)
 
