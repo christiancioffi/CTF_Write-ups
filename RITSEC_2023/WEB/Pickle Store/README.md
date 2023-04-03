@@ -19,15 +19,15 @@ class RCE:
         return (function_name, (parameter_1,parameter_2,)) #if there is only 1 parameter: (parameter_1,)
 ```
 ## Exploring the challenge
-This is the first thing the user see as soon as he/she accesses the challenge:
+This is the first thing we see as soon as he/she accesses the challenge:
 
 ![Pickle Store](https://user-images.githubusercontent.com/66698256/229376712-d235bbbb-0d59-4c3d-a9e0-ab0829107127.png)
 
-If the user clicks on one of the buttons (the first one, for example), he/she will be redirected to <code>/order</code>:
+If we click on one of the buttons (the first one, for example), we will be redirected to <code>/order</code>:
 
 ![Order executed](https://user-images.githubusercontent.com/66698256/229377403-7b7e14fd-62dd-46fd-9b15-5188b734f11d.png)
 
-Clicking on the "New Order" button the user will be redirected to the initial page. By inspecting the four buttons something interesting can be noticed:
+Clicking on the "New Order" button we will be redirected to the initial page. By inspecting the four buttons something interesting can be noticed:
 
 ![Cookie setting](https://user-images.githubusercontent.com/66698256/229377514-b38166dd-aa58-412f-866b-9b865f722abc.png)
 
@@ -37,7 +37,7 @@ If we take the cookie value defined in the event handler of the "Sweet Pickle" b
 ![Unpickling](https://user-images.githubusercontent.com/66698256/229381958-d871524b-304f-4e3b-932b-790bd8eba284.png)
 
 As expected, the obtained object ("*sweetpickle*") is a string and it's the same visualized in the <code>/order</code> page.<br>
-Thus the user can pickle any object (not only strings), encode it in base64 and set the "*order*" cookie accordingly. The string will be decoded, the pickled object unpickled and, if a string, printed on the <code>/order</code> page.
+Thus we can pickle any object (not only strings), encode it in base64 and set the "*order*" cookie accordingly. The string will be decoded, the pickled object unpickled and, if a string, printed on the <code>/order</code> page.
 
 ![Pickling](https://user-images.githubusercontent.com/66698256/229382473-c062a8e3-a07e-4b39-8ee6-72cf397041aa.png)
 
@@ -77,11 +77,11 @@ pickled_base64_string = pickled_base64_bytes.decode('ascii')   #Base64 encoding 
 response=requests.get("https://pickles-web.challenges.ctf.ritsec.club/order",cookies={"order":pickled_base64_string})
 print(response.text)
 ```
-In order to execute a reverse shell a service like *ngrok* can be used. In this example I will listen on port <code>9001</code> of my own machine, but, for the server, I will listen on port <code>19945</code> at <code>4.tcp.eu.ngrok.io</code> (*ngrok* will redirect traffic on its port to mine). So:
+In order to execute a reverse shell a service like *ngrok* can be used. In this example we will listen on port <code>9001</code> of our own machine, but, for the server, we will listen on port <code>19945</code> at <code>4.tcp.eu.ngrok.io</code> (*ngrok* will redirect traffic on its port to ours). So:
 
 ![Listening_Reverse_Shell](https://user-images.githubusercontent.com/66698256/229460262-ab932d54-cd3b-4129-8e6a-0414c33c22e6.png)
 
-Then I'll execute the exploit:
+Then we'll execute the exploit:
 
 ![Exploit](https://user-images.githubusercontent.com/66698256/229460307-60e25c2c-305a-493c-a2e4-e2c2553d8721.png)
 
