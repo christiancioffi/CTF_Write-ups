@@ -91,7 +91,7 @@ Then I'll execute the exploit:
 
 ![Spawned_Reverse_Shell](https://user-images.githubusercontent.com/66698256/229456613-76d66a6c-1468-4e23-8626-c1c79855f29c.png)
 
-Reverse shell spawned! The flag is at <code>/flag</code>.
+Reverse shell spawned! The flag is inside <code>/flag</code>.
 
 ![Flag](https://user-images.githubusercontent.com/66698256/229458939-a3ca621a-0721-4edf-8ae2-a1709a4c9edd.png)
 
