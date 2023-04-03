@@ -49,7 +49,7 @@ Thus the user can pickle any object (not only strings), encode it in base64 and 
 
 ## Attack
 
-The behaviour to be exploited is the insecure unpickling (or insecure deserialization) of particular pickled objects. What the application does with the output of the deserialization is of no interest to the attacker. A way to exploit the involved vulnerability was to spawn a reverse shell on the server through Python code. The *\_\_reduce\_\_()* method should be defined like this:
+The behaviour to be exploited is the insecure unpickling (or insecure deserialization) of particular pickled objects. What the application does with the output of the deserialization is of no interest to the attacker. A way to exploit the involved vulnerability is to spawn a reverse shell on the server through Python code. The *\_\_reduce\_\_()* method should be defined like this:
 
 ```python
 host="IP_Address"   #or "Domain_Name"
