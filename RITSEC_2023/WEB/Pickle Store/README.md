@@ -37,7 +37,7 @@ If we take the cookie value defined in the event handler of the "Sweet Pickle" b
 ![Unpickling](https://user-images.githubusercontent.com/66698256/229381958-d871524b-304f-4e3b-932b-790bd8eba284.png)
 
 As expected, the obtained object ("*sweetpickle*") is a string and it's the same visualized in the <code>/order</code> page.<br>
-Thus we can pickle any object (not only strings), encode it in base64 and set the "*order*" cookie accordingly. The string will be decoded, the pickled object unpickled and, if a string, printed on the <code>/order</code> page.
+Thus we can pickle any object (not only strings), encode it in base64 and set the "*order*" cookie accordingly. Once recieved by the server, the string will be decoded, the pickled object unpickled and, if a string, printed on the <code>/order</code> page.
 
 ![Pickling](https://user-images.githubusercontent.com/66698256/229382473-c062a8e3-a07e-4b39-8ee6-72cf397041aa.png)
 
