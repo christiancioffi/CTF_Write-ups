@@ -6,7 +6,7 @@
 
 ## Involved Vulnerability
 
-The server of this challenge uses the Python module called *pickle*, which is used for serializing (“*Pickling*”) and de-serializing (“*Unpickling*”) Python objects' structure (see [[1]](#1)). This module is vulnerable to RCE during unpickling of class instances (objects). Classes can be defined to contain methods that can be called during the unpickling process to specify how they should be unpickled. One of these methods is *\_\_reduce()\_\_*.<br>
+The server of this challenge uses the Python module called *pickle*, which is used for serializing (“*Pickling*”) and deserializing (“*Unpickling*”) Python objects' structure (see [[1]](#1)). This module is vulnerable to RCE during unpickling of class instances (objects). Classes can be defined to contain methods that can be called during the unpickling process to specify how they should be unpickled. One of these methods is *\_\_reduce()\_\_*.<br>
 As evidenced by [[1]](#1):<br>
 
 >The \_\_reduce\_\_() method takes no argument and shall return either a string or preferably a tuple (the returned object is often referred to as the “reduce value”).<br>
