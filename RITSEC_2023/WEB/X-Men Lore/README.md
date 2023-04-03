@@ -30,7 +30,7 @@ When a button is clicked, a cookie called "*xmen*" is set to a base64 string and
 
 ![Decoding](https://user-images.githubusercontent.com/66698256/229514057-e00e2b98-a18f-4999-83dd-e888751a1536.png)
 
-They are XML data, processed by the server to know which xmen the user wants to receive information on. This input is then elaborated and printed inside the returned page. 
+They are XML data, processed by the server to know which xmen the user wants to receive information on. This input is then elaborated and printed within the returned page, along with some other info about the clicked x-men. 
 
 ## Attack
 
