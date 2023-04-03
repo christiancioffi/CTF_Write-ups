@@ -62,7 +62,7 @@ class RCE:
 Variables <code>host</code> and <code>port</code> contain, respectively, the IP address and the port on which the attacker will listen for the spawned reverse shell. 
 
 ## References
-<a id="1" target="_blank">[1]</a> 
+<a id="1" target="\_blank">[1]</a> 
 https://docs.python.org/3/library/pickle.html
 
 
