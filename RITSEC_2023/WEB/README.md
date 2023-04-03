@@ -32,13 +32,13 @@ Clicking on the "New Order" button the user will be redirected to the initial pa
 
 ![Cookie setting](https://user-images.githubusercontent.com/66698256/229377514-b38166dd-aa58-412f-866b-9b865f722abc.png)
 
-When a button is clicked, a cookie called "*order*" is set to a pickled string, sent to the server through a GET request to <code>/order</code>, its value decoded, unpickled and then printed into the returned page. Thanks to this cookie the server knows which article (or pickle) the user has chosen "to buy".<br>
-If we take the cookie value defined in the event handler of the "Sweet Pickle" button, decode it and unpickle it, we'll get the following outputs:
+When a button is clicked, a cookie called "*order*" is set to a pickled string and sent to the server through a GET request to <code>/order</code>. Here the pickled object is presumably read from the cookie, decoded, unpickled and ultimately printed into the returned page. Thanks to this cookie the server knows which article (or pickle) the user has chosen "to buy".<br>
+If we take the cookie value defined in the event handler of the "Sweet Pickle" button, decode it and unpickle it, we'll understand better how all this works.
 
 ![Unpickling](https://user-images.githubusercontent.com/66698256/229381958-d871524b-304f-4e3b-932b-790bd8eba284.png)
 
-The string "*sweetpickle*" is the same visualized in the <code>/order</code> page.<br>
-The user can create any pickled object and set the "*order*" cookie accordingly. This object will be unpickled by the server and, if a string, printed on the <code>/order</code> page.
+As expected the string obtained ("*sweetpickle*") is the same visualized in the <code>/order</code> page.<br>
+The user can create any pickled object and set the "*order*" cookie accordingly. This object will be unpickled by the server and, somehow, printed on the <code>/order</code> page.
 
 ![Pickling](https://user-images.githubusercontent.com/66698256/229382473-c062a8e3-a07e-4b39-8ee6-72cf397041aa.png)
 
