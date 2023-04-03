@@ -44,7 +44,7 @@ Now we have to reload the <code>/xmen</code> page:
 
 ![Injection_executed](https://user-images.githubusercontent.com/66698256/229519399-1a44b268-9e21-4aeb-b21f-08a545636196.png)
 
-Succesfull injection! The flag is inside <code>flag</code> file. So:
+Succesful injection! The flag is inside <code>flag</code> file. So:
 
 ![xxe_flag](https://user-images.githubusercontent.com/66698256/229520247-d33952cb-ed04-443b-9b14-c2b5e4e325f4.png)
 
