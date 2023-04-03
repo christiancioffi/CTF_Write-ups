@@ -2,7 +2,7 @@
 
 **Challenge category**: Web<br>
 **Challenge description**: "New pickles just dropped! Check out the store."<br>
-**Challenge date**: ven, 31 Mar. 2023, 16:00 UTC — dom, 02 Apr. 2023, 16:00 UTC<br>
+**CTF date**: ven, 31 Mar. 2023, 16:00 UTC — dom, 02 Apr. 2023, 16:00 UTC<br>
 **Challenge points**: 223<br>
 
 ## Involved Vulnerability
