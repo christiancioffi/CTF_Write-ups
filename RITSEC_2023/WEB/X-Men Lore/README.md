@@ -15,7 +15,7 @@ This is the first thing we see as soon as we access the challenge:
 
 ![Schermata_Iniziale_2](https://user-images.githubusercontent.com/66698256/229508636-0437331b-805d-46ac-b46d-b7139dc5b235.png)
 
-If we click on one of the buttons (the first one, for example), we will be redirected to <code>/xmen</code>:
+If we click on one of the buttons (the first one, for example), we will be redirected to <code>/xmen</code>, where we can read some information about the clicked x-men:
 
 ![Beast_1](https://user-images.githubusercontent.com/66698256/229508839-3c450744-ea36-4c67-8b59-d1a41bdadf86.png)
 
