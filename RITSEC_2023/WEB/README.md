@@ -85,7 +85,7 @@ In order to execute a reverse shell a service like <code>ngrok</code> can be use
 
 ![Listening_Reverse_Shell](https://user-images.githubusercontent.com/66698256/229460262-ab932d54-cd3b-4129-8e6a-0414c33c22e6.png)
 
-Then i'll execute the exploit:
+Then I'll execute the exploit:
 
 ![Exploit](https://user-images.githubusercontent.com/66698256/229460307-60e25c2c-305a-493c-a2e4-e2c2553d8721.png)
 
