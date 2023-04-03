@@ -13,7 +13,7 @@ As evidenced by [[1]](#1):<br>
 If a string is returned, the string should be interpreted as the name of a global variable. \[...\]<br>
 When a tuple is returned, it must be between two and six items long. Optional items can either be omitted, or None can be provided as their value. The semantics of each item are in order:<br> - A **callable object** that will be called to create the initial version of the object.<br> - A **tuple of arguments** for the callable object. An empty tuple must be given if the callable does not accept any argument.<br> - \[...\]
 
-A Python function is a callable object. So, if the attacker defines a class like the one below, the server will execute the specified function with the parameters given in the tuple.
+A Python function is a callable object. So, if the attacker defines a class like the one below, pickles its instance and send the pickled object to the server, this will execute the specified function with the parameters given in the tuple.
 ```python
 class RCE:
     def __reduce__():
