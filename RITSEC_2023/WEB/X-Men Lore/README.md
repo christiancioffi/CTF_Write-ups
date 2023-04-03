@@ -6,7 +6,7 @@
 
 ## Involved Vulnerability
 
-This challenge is about a misconfigured server that unsecurely parses XML data. This allows XXE injections.
+This challenge is about a misconfigured server that unsecurely parses XML data, allowing XXE injections.
 
 ## Exploring the challenge
 This is the first thing we see as soon as we access the challenge:
