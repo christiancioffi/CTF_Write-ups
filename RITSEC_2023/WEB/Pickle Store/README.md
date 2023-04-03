@@ -32,13 +32,13 @@ Clicking on the "New Order" button we will be redirected to the initial page. By
 
 ![Cookie setting](https://user-images.githubusercontent.com/66698256/229377514-b38166dd-aa58-412f-866b-9b865f722abc.png)
 
-When a button is clicked, a cookie called "*order*" is set to a base64 string containing a pickled object and sent to the server through a GET request to <code>/order</code>. Here the string is presumably read from the cookie, decoded, the pickled object unpickled and ultimately printed into the returned page (if a string). Thanks to this cookie the server knows which article (or pickle) the user has chosen to buy.<br>
+When a button is clicked, a cookie called "*order*" is set to a base64 string containing a pickled object and sent to the server through a GET request to <code>/order</code>. Here the string is presumably read from the cookie, decoded, the pickled object unpickled and ultimately printed within the returned page (if a string). Thanks to this cookie the server knows which article (or pickle) the user has chosen to buy.<br>
 If we take the cookie value defined in the event handler of the "Sweet Pickle" button, decode it and unpickle it, we'll understand better how all this works.
 
 ![Unpickling](https://user-images.githubusercontent.com/66698256/229381958-d871524b-304f-4e3b-932b-790bd8eba284.png)
 
 As expected, the obtained object ("*sweetpickle*") is a string and it's the same visualized in the <code>/order</code> page.<br>
-Thus we can pickle any object (not only strings), encode it in base64 and set the "*order*" cookie accordingly. Once recieved by the server at the <code>/order</code> endpoint, the string will be decoded, the pickled object unpickled and, if a string, printed on the returned page.
+Thus we can pickle any object (not only strings), encode it in base64 and set the "*order*" cookie accordingly. Once recieved by the server at the <code>/order</code> endpoint, the string will be decoded, the pickled object unpickled and, if a string, printed within the returned page.
 
 ![Pickling](https://user-images.githubusercontent.com/66698256/229382473-c062a8e3-a07e-4b39-8ee6-72cf397041aa.png)
 
