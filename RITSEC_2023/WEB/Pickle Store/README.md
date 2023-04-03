@@ -93,7 +93,7 @@ Reverse shell spawned! The flag is inside <code>/flag</code>.
 
 Flag is <code>RS{TH3_L345T_53CUR3_P1CKL3}</code>.
 
-## Other solutions
+## Other solution
 
 A less complicated way to solve the challenge was to pickle an instance of the following class:
 
