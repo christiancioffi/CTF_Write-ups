@@ -26,7 +26,7 @@ Clicking on the "Home" button we will be redirected to the initial page. By insp
 
 ![Cookies](https://user-images.githubusercontent.com/66698256/229509551-f960f9b0-0f07-479e-9bf2-e525fe59b9e1.png)
 
-When a button is clicked, a cookie called "*xmen*" is set to a base64 string and sent to the server through a GET request to <code>/xmen</code>. If we take the cookie value defined in the event handler of the "Beast" button and decode it ([[1]](#1)), we would obtain the following output:
+When a button is clicked, a cookie called "*xmen*" is set to a base64 string and sent to the server through a GET request to <code>/xmen</code>. If we take the cookie value defined in the event handler of the "Beast" button and decode it ([[1]](#1)), we would get the following output:
 
 ![Decoding](https://user-images.githubusercontent.com/66698256/229514057-e00e2b98-a18f-4999-83dd-e888751a1536.png)
 
