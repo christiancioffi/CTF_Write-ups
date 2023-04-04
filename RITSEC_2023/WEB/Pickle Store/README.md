@@ -108,7 +108,7 @@ class RCE:
 ```
 The flag would have been returned in the <code>/order</code> page:
 
-![image](https://user-images.githubusercontent.com/66698256/229546319-49b8a02e-68f8-49b9-af3e-fe714244bb7c.png)
+![Alternative_Solution](https://user-images.githubusercontent.com/66698256/229853920-2302a399-7ae8-439d-b783-330197499681.png)
 
 ## References
 <a id="1">[1]</a> 
