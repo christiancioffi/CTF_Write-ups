@@ -16,7 +16,7 @@ This is the first thing we see as soon as we access the challenge:
 
 ![Schermata_Iniziale_2](https://user-images.githubusercontent.com/66698256/229508636-0437331b-805d-46ac-b46d-b7139dc5b235.png)
 
-If we click on one of the buttons (the first one, for example), we will be redirected to <code>/xmen</code>, where we can read some information about the clicked x-men:
+If we click on one of the buttons (the first one, for example), we will be redirected to <code>/xmen</code>, where we can read some information about the clicked x-men character:
 
 ![Beast_1](https://user-images.githubusercontent.com/66698256/229508839-3c450744-ea36-4c67-8b59-d1a41bdadf86.png)
 
@@ -30,7 +30,7 @@ When a button is clicked, a cookie called "*xmen*" is set to a base64 string and
 
 ![Decoding](https://user-images.githubusercontent.com/66698256/229514057-e00e2b98-a18f-4999-83dd-e888751a1536.png)
 
-They are XML data, processed by the server to know which x-men the user wants to receive information on. This input is then elaborated and printed within the returned page, along with some other info about the clicked x-men. 
+They are XML data, processed by the server to know which x-men character the user wants to receive information on. This input is then elaborated and printed within the returned page, along with some other info about the clicked x-men member. 
 
 ## Attack
 
