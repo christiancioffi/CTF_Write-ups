@@ -5,7 +5,7 @@
 **Challenge points**: 238<br>
 **CTF date**: ven, 31 Mar. 2023, 16:00 UTC — dom, 02 Apr. 2023, 16:00 UTC<br>
 
-## Involved Vulnerability
+## Context
 
 This challenge is about a misconfigured server that unsecurely parses XML data, allowing XXE injections.
 
