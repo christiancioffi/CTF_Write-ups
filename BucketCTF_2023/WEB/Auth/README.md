@@ -11,11 +11,12 @@ This challenge concerns the use of weak keys for signing JSON Web Tokens.
 
 ## Exploring the challenge
 
+INCOMPLETE
 
 
 ## Attack
 
-
+INCOMPLETE
 
 
 Flag is <code></code>.
