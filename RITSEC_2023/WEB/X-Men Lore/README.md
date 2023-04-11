@@ -34,7 +34,7 @@ They are XML data, processed by the server to know which x-men character the use
 
 ## Attack
 
-If the server is not properly configured, it can processes XXE inside XML Data. So, we can inject a test XXE inside the decoded string above in order to make the server read <code>/etc/passwd</code> local file (and then printed it out).
+If the server is not properly configured, it can processes XXE inside XML Data. So, we can inject a test XXE inside the decoded string above in order to make the server read <code>/etc/passwd</code> local file (and then print it out).
 
 ![encoding_xxe_inj](https://user-images.githubusercontent.com/66698256/229519232-23bf12f0-e9b3-4532-aaa3-8e6695a77c4e.png)
 
