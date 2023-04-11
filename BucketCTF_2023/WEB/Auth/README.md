@@ -22,4 +22,4 @@ Flag is <code></code>.
 
 ## References
 <a id="1">[1]</a> 
-https://www.w3.org/Graphics/GIF/spec-gif87.txt
+
