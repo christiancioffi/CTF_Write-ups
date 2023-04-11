@@ -65,7 +65,7 @@ The server run the GIF file as a PHP file (the error is due to some metadata). L
 
 ![Gif_File](https://user-images.githubusercontent.com/66698256/231180401-07014406-2605-485c-9375-f52d7edaee81.png)
 
-As described above in the *Context* section, the file starts with a signature that matches the pattern <code>GIF[0-9]{2}[a-z]</code> (<code>GIF89a</code>). Then you can see the metadata that caused the error (<code>begin="ï»¿"</code>).
+As described above in the *Context* section, the file starts with a signature that matches the pattern <code>GIF[0-9]{2}[a-z]</code> (<code>GIF89a</code>). You can also see the metadata that caused the error (<code>begin="ï»¿"</code>).
 
 
 ## Attack
