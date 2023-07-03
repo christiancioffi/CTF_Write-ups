@@ -7,7 +7,7 @@
 
 ## Context
 
-This challenge is about a Log Injection that leads to exfiltration of cookies.
+This challenge is about a Log Injection leading to exfiltration of cookies.
 
 ## Exploring the challenge
 
