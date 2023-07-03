@@ -106,7 +106,7 @@ incorporate part of the log's content (admin's cookie included):
 
 '></head> ....
 ```
-This HTML could redirect the client to the specified url including all the log's content written before the single quote in the <code>exf</code> parameter. If server logs an admin event inside this content, thus before injecting the <code>'></head></code> part, we can exfiltrate admin's authentication cookie.
+This HTML could redirect the client to the specified url including all the log's content written before the single quote in the <code>exf</code> parameter. If server logs an admin event inside this content, thus before injecting the <code>'>\</head\></code> part, we can exfiltrate admin's authentication cookie.
 
 ## Attack
 Six steps:
@@ -114,7 +114,7 @@ Six steps:
 + Visit <code>https://instance_server/admin?view=file:///flag.html</code> (it's important that the <code>view</code> parameter contains a valid path (existent file),
 because otherwise an error will be triggered and the log's content resetted, deleting our previous input).
 + Submit the url <code>https://127.0.0.1:8080/admin?view=file:///flag.html</code> to the admin bot.
-+ Login with username <code><html>'></head></code>.
++ Login with username <code><html>'>\</head\></code>.
 + Visit <code>https://instance_server/admin?view=file:///flag.html</code>.
 + Submit the url <code>http://127.0.0.1:8080/admin?view=file:///var/log/adminplz/latest.log</code> to the admin bot.
 
