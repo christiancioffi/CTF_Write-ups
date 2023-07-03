@@ -106,6 +106,7 @@ incorporate part of the log's content (admin's cookie included):
 
 '></head> ....
 ```
+This HTML could redirect the client to the specified url including all the log's content written before the single quote in the <code>exf</code> parameter. If server logs an admin event inside this content, thus before injecting the <code>'></head></code> part, we can exfiltrate admin's authentication cookie.
 
 ## Attack
 Six steps:
