@@ -89,7 +89,7 @@ In order to trigger an XSS, a code like this: <code>\</span\>\<img src onerror='
 </body>
 </HTML>
 ```
-If we click on the preview button, the client is redirect to the same page but with nutshell parameter containing the malicious HTML. 
+If we click on the preview button, the client is redirected to the same page but with nutshell parameter containing the malicious HTML. 
 The XSS should be triggered. If we send the page's url to the admin bot, its cookie (the flag) is obtained.
 
 ![peanut_xss_flag](https://github.com/H31s3n-b3rg/CTF_Write-ups/assets/66698256/4a45e29f-728b-4ce3-9390-19aa51fafece)
