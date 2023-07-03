@@ -7,15 +7,21 @@
 
 ## Context
 
-This challenge is about a Dangling Markup (Log) Injection .
+This challenge is about a Log Injection that leads to exfiltration of cookies.
 
 ## Exploring the challenge
 
+![1](https://github.com/H31s3n-b3rg/CTF_Write-ups/assets/66698256/5ab67534-cd47-4328-bd60-73ab33e3e6d0)
 
+![4](https://github.com/H31s3n-b3rg/CTF_Write-ups/assets/66698256/d673a902-6b96-49e5-97e5-8c8689e861cd)
+
+
+![2](https://github.com/H31s3n-b3rg/CTF_Write-ups/assets/66698256/be43b485-a783-4e69-90d9-553995228101)
 
 The only thing we can do on this page is logging in and submitting an url to the admin bot. If we access to the /admin endpoint, we'll get an error:
 
-**IMAGE**
+![3](https://github.com/H31s3n-b3rg/CTF_Write-ups/assets/66698256/e5169f48-6c01-4e8a-9ee9-ec89a89ce823)
+
 Let's have a look at the Java code.
 ```javascript
 const { chromium } = require('playwright-chromium');
@@ -113,13 +119,14 @@ because otherwise an error will be triggered and the log's content resetted, del
 
 After executing these steps, our server will receive a GET request with all the exfiltrated content inside a query parameter.
 
-**IMAGE**
+![adminplz_cookie](https://github.com/H31s3n-b3rg/CTF_Write-ups/assets/66698256/de9a0540-c05e-4747-9917-06997257a46a)
+
 
 Got admin's session ID!
 Now we have to use this cookie when accessing the <code>/admin</code> endpoint. In order to access the flag file we have to set the <code>view</code>
 parameter to <code>file:///flag.html.</code>, so: <code>https://instance_server/admin?view=file:///flag.html</code>. By Visiting this link we'll get the flag!
 
-**IMAGE**
+![adminplz_flag](https://github.com/H31s3n-b3rg/CTF_Write-ups/assets/66698256/888aa3a9-0937-4f36-b173-8a7777136c59)
 
 Flag is <code>uiuctf{adminplz_c4n_1_h4v3_s0M3_co0k13s?_b5eab1cc61c26f07e63af7f8}</code>.
 
