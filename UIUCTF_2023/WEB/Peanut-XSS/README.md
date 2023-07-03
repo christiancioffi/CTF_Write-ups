@@ -7,7 +7,7 @@
 
 ## Context
 
-This challenge is about a DOM XSS.
+This challenge is about a DOM XSS (and HTML Obfuscation).
 
 ## Exploring the challenge
 
