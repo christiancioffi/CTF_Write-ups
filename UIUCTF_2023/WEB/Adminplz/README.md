@@ -122,7 +122,7 @@ After executing these steps, our server will receive a GET request with all the 
 ![adminplz_cookie](https://github.com/H31s3n-b3rg/CTF_Write-ups/assets/66698256/de9a0540-c05e-4747-9917-06997257a46a)
 
 
-Got admin's session ID!
+Got admin's session ID (<code>36D142A1763851F1DE47DEB881FC2A3A</code>)!
 Now we have to use this cookie when accessing the <code>/admin</code> endpoint. In order to access the flag file we have to set the <code>view</code>
 parameter to <code>file:///flag.html.</code>, so: <code>https://instance_server/admin?view=file:///flag.html</code>. By Visiting this link we'll get the flag!
 
