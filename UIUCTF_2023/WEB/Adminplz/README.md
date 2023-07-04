@@ -117,7 +117,7 @@ Six steps:
 + Visit <code>https://instance_server/admin?view=file:///flag.html</code>.
 + Submit the url <code>http://127.0.0.1:8080/admin?view=file:///var/log/adminplz/latest.log</code> to the admin bot.
 
-After performing these steps, our server will receive a GET request with all exfiltrated content within a query parameter.
+After performing these steps, our server will receive a GET request with all the exfiltrated content within a query parameter.
 
 ![adminplz_cookie](https://github.com/H31s3n-b3rg/CTF_Write-ups/assets/66698256/de9a0540-c05e-4747-9917-06997257a46a)
 
